@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自写版乐淘移动端</title>
+    <!-- 1.提供mui样式 -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 2.提供字体图标 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 3.主页的less主页 -->
+    <link rel="stylesheet/less" href="../less/search.less">
+    <!-- 引入less的编译器 -->
+    <script src="./lib/less/less.js"></script>
+
+
+
+</head>
+
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <a href="#" class="icon_back fa fa-arrow-left"></a>
+
+        <h4>搜索中心</h4>
+    </header>
+
+    <!-- //////////////////////////////////////////// -->
+    <!-- 主体区域 -->
+    <main id="main">
+        <div class="search">
+            <form action="">
+                <input class="inp" type="search" placeholder="搜索你喜欢的商品">
+                <button class="btn">搜索</button>
+
+            </form>
+
+        </div>
+
+        <div class="history">
+            <div class="top">
+                <span class="mui-pull-left ">搜索历史</span>
+                <span class="mui-pull-right empty">
+                    <a href="#" class="icon_clear fa fa-trash"></a>
+
+                    清空记录</span>
+            </div>
+            <div class="down">
+                <ul class="zzzz">
+
+                </ul>
+            </div>
+        </div>
+
+    </main>
+
+
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3"><a href="#" class="active"><i class="fa fa-home"></i><span>首页</span></a></div>
+            <div class="mui-col-xs-3"><a href="category.html"><i class="fa fa-navicon"></i><span>分类</span></a></div>
+            <div class="mui-col-xs-3"><a href="#"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></div>
+            <div class="mui-col-xs-3"><a href="#"><i class="fa fa-user"></i><span>会员中心</span></a></div>
+        </div>
+    </footer>
+
+
+    <!-- 创建一个搜索历史列表的模板 -->
+    <script id="tmp" type="text/html">
+        {{if rows.length > 0}}
+
+        {{each rows value i}}
+        <li class="mui-clear">
+                <a href="#" class="mui-pull-left">{{value.search}}</a>
+                <span data-id="{{value.id}}" class="icon_delete fa fa-close mui-pull-right del"></span>
+            </li>
+        {{/each}}
+        {{else}}
+            <li><a>没有搜索记录</a></li>
+        {{/if}}
+
+    </script>
+    <!-- <li class="mui-clear">
+            <a href="#" class="mui-pull-left">{{value.search}}</a>
+            <span data-id="{{value.id}}" class="icon_delete fa fa-close mui-pull-right del"></span>
+        </li> -->
+
+
+
+    <!-- mui的js文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- zepto的js文件 操作元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 模板引擎的js文件 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+
+    <!-- 主页的js文件 -->
+    <script src="../js/search.js"></script>
+</body>
+
+</html>

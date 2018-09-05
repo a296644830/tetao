@@ -1,0 +1,103 @@
+@import 'base.less';
+html,body{
+    height: 100%;
+}
+
+// 头部样式
+#header{
+    display: flex;
+    .back{
+        display: block;
+        width: 25px;
+        left: 10px;
+    }
+    form{
+        flex: 1;
+        padding: 0 40px;
+        line-height: 45px;
+
+        .inp{
+            padding: 10px;
+            height: 30px;
+            // border: 1px solid #000;
+            background-color: white;
+            border-radius: 3px;
+        }
+    }
+  
+    .search{
+        display: block;
+        // width: 25px;
+      
+    }
+}
+//主体样式
+#main{
+    width: 100%;
+    display: flex;
+    padding: 45px 0;
+    background-color: #ccc;
+    height: 100%;
+
+//左边导航样式
+    .left{
+        width: 80px;
+        >ul{
+            li{
+                z-index: 2;
+                background-color: white;
+                &.active{
+                    background-color: #ccc;
+                }
+
+                a{
+                   
+                    display: block;
+                    padding: 15px 10px;
+                    font-size: 14px;
+                    color: black;
+                    border-bottom: 1px solid #ccc;
+                }
+
+            }
+        }
+
+    }
+    //右边导航样式
+    .right{
+  
+        flex: 1;
+        position: relative;
+        height: 100%;
+        .mui-scroll-wrapper{
+            .mui-scroll{
+                height: 101%;
+                .mui-row{
+                    padding: 10px;
+                    padding-right: 0;
+                    .mui-col-xs-4{
+        
+                        a{
+                            display: block;
+                            background-color: white;
+                            height: 100%;
+                            text-align: center;
+                            // width: 100px;
+        
+                            img{
+                                width: 100%;
+                                width: 66px;
+                            }
+                        }
+        
+                    }
+                }
+            }
+        }
+
+       
+
+
+    }
+
+}
